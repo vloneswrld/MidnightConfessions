@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Midnight Confessions</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at top, #0d0f26, #000000);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #ffffff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #d6b1ff;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 10px #9a7cff;
+    }
+
+    .confession-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 700px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(165, 130, 255, 0.2);
+      overflow-y: auto;
+      max-height: 70vh;
+    }
+
+    .confession {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .confession:nth-child(1)  { animation-delay: 0.5s; }
+    .confession:nth-child(2)  { animation-delay: 1s; }
+    .confession:nth-child(3)  { animation-delay: 1.5s; }
+    .confession:nth-child(4)  { animation-delay: 2s; }
+    .confession:nth-child(5)  { animation-delay: 2.5s; }
+    .confession:nth-child(6)  { animation-delay: 3s; }
+    .confession:nth-child(7)  { animation-delay: 3.5s; }
+    .confession:nth-child(8)  { animation-delay: 4s; }
+    .confession:nth-child(9)  { animation-delay: 4.5s; }
+    .confession:nth-child(10) { animation-delay: 5s; }
+    .confession:nth-child(11) { animation-delay: 5.5s; }
+    .confession:nth-child(12) { animation-delay: 6s; }
+    .confession:nth-child(13) { animation-delay: 6.5s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .stars span {
+      position: absolute;
+      font-size: 18px;
+      color: white;
+      opacity: 0.2;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-150vh) rotate(360deg);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .confession-box {
+        padding: 20px;
+      }
+
+      .confession {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <h1>🌙 Midnight Confessions</h1>
+  <div class="confession-box">
+    <div class="confession">1. I miss you even when you’re right here.</div>
+    <div class="confession">2. Sometimes I reread our messages just to feel close again.</div>
+    <div class="confession">3. I wish I could crawl into your hoodie and never leave.</div>
+    <div class="confession">4. I overthink a lot, but loving you is the one thing I’m always sure of.</div>
+    <div class="confession">5. Your name feels like a lullaby I never get tired of.</div>
+    <div class="confession">6. I get scared of losing you even when nothing’s wrong.</div>
+    <div class="confession">7. I want forever, but I also want every little now with you.</div>
+    <div class="confession">8. I love you more than you probably even realize.</div>
+    <div class="confession">9. Sometimes I cry because my heart just holds too much of you.</div>
+    <div class="confession">10. I fall harder for you at night when everything’s quiet.</div>
+    <div class="confession">11. I never want to be without you, not even for a second.</div>
+    <div class="confession">12. You feel like peace. Like home. Like magic.</div>
+    <div class="confession">13. I don’t say it all the time, but I need you.</div>
+  </div>
+
+  <script>
+    // floating stars
+    const stars = document.getElementById("stars");
+    const emojis = ["⭐", "🌙", "💤", "✨"];
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("span");
+      star.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.fontSize = Math.random() * 20 + 15 + "px";
+      star.style.animationDuration = Math.random() * 8 + 5 + "s";
+      stars.appendChild(star);
+    }
+  </script>
+</body>
+</html>
